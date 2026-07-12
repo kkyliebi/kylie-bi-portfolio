@@ -16,3 +16,13 @@
 - Install dependencies with `npm install`.
 - Start local development with `npm run dev`.
 - Verify production output with `npm run build`.
+
+## Git push (Cloud Agent)
+
+Cloud agents cannot use Windows Credential Manager. Before pushing:
+
+1. Add `GITHUB_TOKEN` (PAT with `repo` scope) as a **Runtime Secret** in Cursor Cloud Agent settings.
+2. Linux/cloud agent: `bash scripts/push-with-github-token.sh`
+3. Local Windows (optional): `powershell -ExecutionPolicy Bypass -File scripts/push-with-github-token.ps1`
+
+Do not run `git push` directly unless credentials are already configured in that environment.

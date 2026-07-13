@@ -1,0 +1,484 @@
+From dd035a097a1493f069800f5d0f402133c15e3779 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Sun, 12 Jul 2026 15:43:22 +0000
+Subject: [PATCH] Initial scaffold: React + TypeScript + Vite portfolio with
+ routing, styles, and GSAP setup
+
+### Motivation
+
+- Provide an initial application skeleton for the Kylie Bi portfolio using React, TypeScript, and Vite so visual refinement and content can be added on a solid foundation.
+
+### Description
+
+- Add project configuration and build files including `package.json`, `vite.config.ts`, and TypeScript configs (`tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`).
+- Create app entry and routing with `index.html`, `src/main.tsx`, `src/router.tsx`, a `Layout` component in `src/components/Layout`, and `Home`/`NotFound` pages under `src/pages`.
+- Add styling setup with `src/styles/global.css` and CSS Modules for `Layout` and `Home` components, and include a minimal `src/vite-env.d.ts`.
+- Prepare third-party animation support by registering `ScrollTrigger` in `src/lib/gsap.ts` and add documentation files `README.md`, `docs/project-structure.md`, and `AGENTS.md` describing project rules and commands.
+
+### Testing
+
+- No automated tests are configured for this repository yet.
+---
+ AGENTS.md                               | 18 ++++++++++
+ README.md                               | 44 +++++++++++++++++++++++--
+ docs/project-structure.md               |  9 +++++
+ index.html                              | 13 ++++++++
+ package.json                            | 26 +++++++++++++++
+ src/components/Layout/Layout.module.css | 24 ++++++++++++++
+ src/components/Layout/Layout.tsx        | 17 ++++++++++
+ src/lib/gsap.ts                         |  6 ++++
+ src/main.tsx                            | 11 +++++++
+ src/pages/Home/Home.module.css          | 28 ++++++++++++++++
+ src/pages/Home/Home.tsx                 | 13 ++++++++
+ src/pages/NotFound/NotFound.tsx         | 11 +++++++
+ src/router.tsx                          | 15 +++++++++
+ src/styles/global.css                   | 23 +++++++++++++
+ src/vite-env.d.ts                       |  1 +
+ tsconfig.app.json                       | 21 ++++++++++++
+ tsconfig.json                           |  7 ++++
+ tsconfig.node.json                      | 16 +++++++++
+ vite.config.ts                          |  6 ++++
+ 19 files changed, 307 insertions(+), 2 deletions(-)
+ create mode 100644 AGENTS.md
+ create mode 100644 docs/project-structure.md
+ create mode 100644 index.html
+ create mode 100644 package.json
+ create mode 100644 src/components/Layout/Layout.module.css
+ create mode 100644 src/components/Layout/Layout.tsx
+ create mode 100644 src/lib/gsap.ts
+ create mode 100644 src/main.tsx
+ create mode 100644 src/pages/Home/Home.module.css
+ create mode 100644 src/pages/Home/Home.tsx
+ create mode 100644 src/pages/NotFound/NotFound.tsx
+ create mode 100644 src/router.tsx
+ create mode 100644 src/styles/global.css
+ create mode 100644 src/vite-env.d.ts
+ create mode 100644 tsconfig.app.json
+ create mode 100644 tsconfig.json
+ create mode 100644 tsconfig.node.json
+ create mode 100644 vite.config.ts
+
+diff --git a/AGENTS.md b/AGENTS.md
+new file mode 100644
+index 0000000..431056c
+--- /dev/null
++++ b/AGENTS.md
+@@ -0,0 +1,18 @@
++# AGENTS.md
++
++## Project rules
++
++- Build the site with React, TypeScript, and Vite.
++- Use React Router for all page routing.
++- Use CSS Modules for component-level styling.
++- Keep global CSS limited to resets, CSS variables, and app-wide defaults.
++- Prepare scroll-based animation work through `src/lib/gsap.ts`; register GSAP plugins there instead of inside page components.
++- Do not begin visual refinement, animation polish, or individual project pages until the foundation is approved.
++- Keep components small, typed, and colocated with their CSS Module when practical.
++- Do not wrap imports in try/catch blocks.
++
++## Commands
++
++- Install dependencies with `npm install`.
++- Start local development with `npm run dev`.
++- Verify production output with `npm run build`.
+diff --git a/README.md b/README.md
+index 499c35c..2a888fa 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,42 @@
+-# kylie-bi-portfolio
+-Personal portfolio website for Kylie Bi.
++# Kylie Bi Portfolio
++
++Personal portfolio website for Kylie Bi, built with React, TypeScript, and Vite.
++
++## Tech stack
++
++- React
++- TypeScript
++- Vite
++- React Router
++- CSS Modules
++- GSAP with ScrollTrigger prepared for future scroll animation work
++
++## Setup
++
++Install dependencies:
++
++```bash
++npm install
++```
++
++Start the development server:
++
++```bash
++npm run dev
++```
++
++Build for production:
++
++```bash
++npm run build
++```
++
++Preview the production build:
++
++```bash
++npm run preview
++```
++
++## Project status
++
++This repository currently contains the initial application skeleton only. Visual refinement, animation polish, and individual project pages have not started yet.
+diff --git a/docs/project-structure.md b/docs/project-structure.md
+new file mode 100644
+index 0000000..5bf9a7a
+--- /dev/null
++++ b/docs/project-structure.md
+@@ -0,0 +1,9 @@
++# Project structure
++
++This portfolio is intentionally scaffolded before visual refinement or individual project pages begin.
++
++- `src/components`: reusable UI building blocks.
++- `src/pages`: route-level page components.
++- `src/lib`: third-party library setup, including GSAP ScrollTrigger registration.
++- `src/styles`: global styles shared across the app.
++- `docs`: planning and implementation documentation.
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..fedbed6
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,13 @@
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <meta name="description" content="Kylie Bi portfolio website." />
++    <title>Kylie Bi Portfolio</title>
++  </head>
++  <body>
++    <div id="root"></div>
++    <script type="module" src="/src/main.tsx"></script>
++  </body>
++</html>
+diff --git a/package.json b/package.json
+new file mode 100644
+index 0000000..3225b73
+--- /dev/null
++++ b/package.json
+@@ -0,0 +1,26 @@
++{
++  "name": "kylie-bi-portfolio",
++  "private": true,
++  "version": "0.1.0",
++  "type": "module",
++  "scripts": {
++    "dev": "vite",
++    "build": "tsc -b && vite build",
++    "preview": "vite preview",
++    "lint": "echo \"Linting is not configured yet.\""
++  },
++  "dependencies": {
++    "gsap": "latest",
++    "react": "latest",
++    "react-dom": "latest",
++    "react-router-dom": "latest"
++  },
++  "devDependencies": {
++    "@types/node": "latest",
++    "@types/react": "latest",
++    "@types/react-dom": "latest",
++    "@vitejs/plugin-react": "latest",
++    "typescript": "latest",
++    "vite": "latest"
++  }
++}
+diff --git a/src/components/Layout/Layout.module.css b/src/components/Layout/Layout.module.css
+new file mode 100644
+index 0000000..ece1bbc
+--- /dev/null
++++ b/src/components/Layout/Layout.module.css
+@@ -0,0 +1,24 @@
++.shell {
++  min-height: 100vh;
++  background: #f8f6f1;
++  color: #202020;
++}
++
++.header {
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  padding: 1.25rem clamp(1rem, 4vw, 3rem);
++}
++
++.logo {
++  color: inherit;
++  font-weight: 700;
++  letter-spacing: 0.04em;
++  text-decoration: none;
++  text-transform: uppercase;
++}
++
++.main {
++  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
++}
+diff --git a/src/components/Layout/Layout.tsx b/src/components/Layout/Layout.tsx
+new file mode 100644
+index 0000000..d10f16c
+--- /dev/null
++++ b/src/components/Layout/Layout.tsx
+@@ -0,0 +1,17 @@
++import { NavLink, Outlet } from 'react-router-dom';
++import styles from './Layout.module.css';
++
++export function Layout() {
++  return (
++    <div className={styles.shell}>
++      <header className={styles.header}>
++        <NavLink className={styles.logo} to="/" aria-label="Kylie Bi home">
++          Kylie Bi
++        </NavLink>
++      </header>
++      <main className={styles.main}>
++        <Outlet />
++      </main>
++    </div>
++  );
++}
+diff --git a/src/lib/gsap.ts b/src/lib/gsap.ts
+new file mode 100644
+index 0000000..420d4f9
+--- /dev/null
++++ b/src/lib/gsap.ts
+@@ -0,0 +1,6 @@
++import gsap from 'gsap';
++import { ScrollTrigger } from 'gsap/ScrollTrigger';
++
++gsap.registerPlugin(ScrollTrigger);
++
++export { gsap, ScrollTrigger };
+diff --git a/src/main.tsx b/src/main.tsx
+new file mode 100644
+index 0000000..6df8037
+--- /dev/null
++++ b/src/main.tsx
+@@ -0,0 +1,11 @@
++import { StrictMode } from 'react';
++import { createRoot } from 'react-dom/client';
++import { RouterProvider } from 'react-router-dom';
++import { router } from './router';
++import './styles/global.css';
++
++createRoot(document.getElementById('root')!).render(
++  <StrictMode>
++    <RouterProvider router={router} />
++  </StrictMode>,
++);
+diff --git a/src/pages/Home/Home.module.css b/src/pages/Home/Home.module.css
+new file mode 100644
+index 0000000..b575e05
+--- /dev/null
++++ b/src/pages/Home/Home.module.css
+@@ -0,0 +1,28 @@
++.hero {
++  display: grid;
++  gap: 1rem;
++  max-width: 52rem;
++}
++
++.kicker {
++  color: #7a6048;
++  font-size: 0.875rem;
++  font-weight: 700;
++  letter-spacing: 0.14em;
++  margin: 0;
++  text-transform: uppercase;
++}
++
++.hero h1 {
++  font-size: clamp(3rem, 10vw, 7rem);
++  line-height: 0.95;
++  margin: 0;
++}
++
++.copy {
++  color: #4b4b4b;
++  font-size: clamp(1rem, 2vw, 1.25rem);
++  line-height: 1.7;
++  margin: 0;
++  max-width: 42rem;
++}
+diff --git a/src/pages/Home/Home.tsx b/src/pages/Home/Home.tsx
+new file mode 100644
+index 0000000..b8fe42a
+--- /dev/null
++++ b/src/pages/Home/Home.tsx
+@@ -0,0 +1,13 @@
++import styles from './Home.module.css';
++
++export function Home() {
++  return (
++    <section className={styles.hero} data-scroll-section>
++      <p className={styles.kicker}>Portfolio foundation</p>
++      <h1>Kylie Bi Portfolio</h1>
++      <p className={styles.copy}>
++        Initial React, TypeScript, Vite, React Router, CSS Modules, and GSAP ScrollTrigger setup is ready for the next design phase.
++      </p>
++    </section>
++  );
++}
+diff --git a/src/pages/NotFound/NotFound.tsx b/src/pages/NotFound/NotFound.tsx
+new file mode 100644
+index 0000000..4754ef0
+--- /dev/null
++++ b/src/pages/NotFound/NotFound.tsx
+@@ -0,0 +1,11 @@
++import { Link } from 'react-router-dom';
++
++export function NotFound() {
++  return (
++    <section>
++      <h1>Page not found</h1>
++      <p>The requested page does not exist yet.</p>
++      <Link to="/">Return home</Link>
++    </section>
++  );
++}
+diff --git a/src/router.tsx b/src/router.tsx
+new file mode 100644
+index 0000000..d2fec2f
+--- /dev/null
++++ b/src/router.tsx
+@@ -0,0 +1,15 @@
++import { createBrowserRouter } from 'react-router-dom';
++import { Layout } from './components/Layout/Layout';
++import { Home } from './pages/Home/Home';
++import { NotFound } from './pages/NotFound/NotFound';
++
++export const router = createBrowserRouter([
++  {
++    path: '/',
++    element: <Layout />,
++    children: [
++      { index: true, element: <Home /> },
++      { path: '*', element: <NotFound /> },
++    ],
++  },
++]);
+diff --git a/src/styles/global.css b/src/styles/global.css
+new file mode 100644
+index 0000000..583554a
+--- /dev/null
++++ b/src/styles/global.css
+@@ -0,0 +1,23 @@
++:root {
++  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
++  color-scheme: light;
++  font-synthesis: none;
++  text-rendering: optimizeLegibility;
++  -webkit-font-smoothing: antialiased;
++  -moz-osx-font-smoothing: grayscale;
++}
++
++* {
++  box-sizing: border-box;
++}
++
++body {
++  margin: 0;
++  min-width: 320px;
++  min-height: 100vh;
++}
++
++button,
++a {
++  font: inherit;
++}
+diff --git a/src/vite-env.d.ts b/src/vite-env.d.ts
+new file mode 100644
+index 0000000..11f02fe
+--- /dev/null
++++ b/src/vite-env.d.ts
+@@ -0,0 +1 @@
++/// <reference types="vite/client" />
+diff --git a/tsconfig.app.json b/tsconfig.app.json
+new file mode 100644
+index 0000000..7a7a882
+--- /dev/null
++++ b/tsconfig.app.json
+@@ -0,0 +1,21 @@
++{
++  "compilerOptions": {
++    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
++    "target": "ES2022",
++    "useDefineForClassFields": true,
++    "lib": ["ES2022", "DOM", "DOM.Iterable"],
++    "allowJs": false,
++    "skipLibCheck": true,
++    "esModuleInterop": true,
++    "allowSyntheticDefaultImports": true,
++    "strict": true,
++    "forceConsistentCasingInFileNames": true,
++    "module": "ESNext",
++    "moduleResolution": "Bundler",
++    "resolveJsonModule": true,
++    "isolatedModules": true,
++    "noEmit": true,
++    "jsx": "react-jsx"
++  },
++  "include": ["src"]
++}
+diff --git a/tsconfig.json b/tsconfig.json
+new file mode 100644
+index 0000000..1ffef60
+--- /dev/null
++++ b/tsconfig.json
+@@ -0,0 +1,7 @@
++{
++  "files": [],
++  "references": [
++    { "path": "./tsconfig.app.json" },
++    { "path": "./tsconfig.node.json" }
++  ]
++}
+diff --git a/tsconfig.node.json b/tsconfig.node.json
+new file mode 100644
+index 0000000..3950b4b
+--- /dev/null
++++ b/tsconfig.node.json
+@@ -0,0 +1,16 @@
++{
++  "compilerOptions": {
++    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
++    "target": "ES2023",
++    "lib": ["ES2023"],
++    "module": "ESNext",
++    "skipLibCheck": true,
++    "moduleResolution": "Bundler",
++    "allowImportingTsExtensions": true,
++    "verbatimModuleSyntax": true,
++    "moduleDetection": "force",
++    "noEmit": true,
++    "strict": true
++  },
++  "include": ["vite.config.ts"]
++}
+diff --git a/vite.config.ts b/vite.config.ts
+new file mode 100644
+index 0000000..0466183
+--- /dev/null
++++ b/vite.config.ts
+@@ -0,0 +1,6 @@
++import { defineConfig } from 'vite';
++import react from '@vitejs/plugin-react';
++
++export default defineConfig({
++  plugins: [react()],
++});
+-- 
+2.43.0

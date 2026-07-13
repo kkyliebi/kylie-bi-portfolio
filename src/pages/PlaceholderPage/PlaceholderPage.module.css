@@ -1,0 +1,33 @@
+.page {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--layout-readable);
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.page h1 {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.page p,
+.page li {
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

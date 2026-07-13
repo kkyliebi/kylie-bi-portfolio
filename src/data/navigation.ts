@@ -4,8 +4,14 @@ export type NavigationItem = {
 };
 
 export const navigationItems: NavigationItem[] = [
-  { label: 'Work', path: '/#work' },
-  { label: 'About', path: '/#about' },
-  { label: 'CV', path: '/#cv' },
-  { label: 'Contact', path: '/#contact' },
+  { label: 'Home', path: '/' },
+  { label: 'Questions', path: '/questions' },
+  { label: 'Tyranno', path: '/tyranno' },
+  { label: 'ScentSync', path: '/scentsync' },
+  { label: 'Aprica Around', path: '/aprica-around' },
+  { label: "Madam, in Eden, I'm Adam", path: '/madam-in-eden-im-adam' },
+  { label: 'Audi', path: '/audi' },
+  { label: 'About', path: '/about' },
+  { label: 'CV', path: '/cv' },
+  { label: 'Contact', path: '/contact' },
 ];

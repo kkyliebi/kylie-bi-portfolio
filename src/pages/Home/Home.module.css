@@ -1,210 +1,28 @@
-.home {
+.hero {
   display: grid;
-  gap: var(--space-9);
+  gap: 1rem;
+  max-width: 52rem;
 }
 
-.section {
-  display: grid;
-  gap: var(--space-5);
-  scroll-margin-block-start: var(--space-8);
-}
-
-.sectionNumber {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-caption);
-  letter-spacing: 0.12em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.openingContent,
-.sectionHeader {
-  display: grid;
-  gap: var(--space-4);
-  max-width: var(--layout-readable);
-}
-
-.openingContent h1,
-.sectionHeader h2 {
-  font-size: var(--font-size-display);
-  line-height: var(--line-height-tight);
-  margin: 0;
-}
-
-.role {
-  font-size: var(--font-size-heading);
-  line-height: var(--line-height-tight);
-  margin: 0;
-}
-
-.intro,
-.sectionHeader p,
-.questionDetails p,
-.subsection p,
-.location {
-  color: var(--color-text-muted);
-  line-height: var(--line-height-relaxed);
-  margin: 0;
-}
-
-.primaryCta,
-.caseLink,
-.contactLinks a {
-  color: var(--color-text);
+.kicker {
+  color: #7a6048;
+  font-size: 0.875rem;
   font-weight: 700;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.24em;
-}
-
-.primaryCta:focus-visible,
-.caseLink:focus-visible,
-.contactLinks a:focus-visible,
-.questionButton:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: var(--space-2);
-}
-
-.questionList {
-  border-top: 1px solid var(--color-border);
-  display: grid;
-}
-
-.questionItem {
-  border-bottom: 1px solid var(--color-border);
-}
-
-.questionButton {
-  align-items: start;
-  background: transparent;
-  border: 0;
-  color: var(--color-text);
-  cursor: pointer;
-  display: grid;
-  gap: var(--space-4);
-  grid-template-columns: 4rem minmax(0, 1fr) minmax(10rem, 16rem);
-  padding: var(--space-5) 0;
-  text-align: left;
-  width: 100%;
-}
-
-.questionNumber,
-.category {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-caption);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
+  margin: 0;
   text-transform: uppercase;
 }
 
-.questionText {
-  font-size: var(--font-size-heading);
-  line-height: var(--line-height-tight);
-}
-
-.questionProject {
-  color: var(--color-text-muted);
-  line-height: var(--line-height-relaxed);
-}
-
-.questionDetails {
-  display: grid;
-  gap: var(--space-3);
-  margin-inline-start: 4rem;
-  max-width: var(--layout-readable);
-  padding-block: 0 var(--space-5);
-}
-
-.aboutGrid {
-  display: grid;
-  gap: var(--space-5);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.subsection {
-  border-top: 1px solid var(--color-border);
-  display: grid;
-  gap: var(--space-3);
-  padding-block-start: var(--space-4);
-}
-
-.subsection h3 {
-  font-size: var(--font-size-body);
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 0.95;
   margin: 0;
 }
 
-.methodology {
-  color: var(--color-text-muted);
-  counter-reset: method;
-  display: grid;
-  gap: var(--space-2);
-  list-style: none;
+.copy {
+  color: #4b4b4b;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
   margin: 0;
-  padding: 0;
-}
-
-.methodology li {
-  align-items: center;
-  display: grid;
-  gap: var(--space-2);
-}
-
-.methodology li:not(:last-child)::after {
-  color: var(--color-text-muted);
-  content: '↓';
-}
-
-.downloadList {
-  display: grid;
-  gap: var(--space-3);
-  max-width: var(--layout-readable);
-}
-
-.downloadPlaceholder {
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  padding: var(--space-4);
-  text-align: left;
-}
-
-.contactLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media (max-width: 900px) {
-  .aboutGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .questionButton {
-    grid-template-columns: 3rem minmax(0, 1fr);
-  }
-
-  .questionProject {
-    grid-column: 2;
-  }
-
-  .questionDetails {
-    margin-inline-start: 3rem;
-  }
-}
-
-@media (max-width: 560px) {
-  .home {
-    gap: var(--space-8);
-  }
-
-  .questionButton {
-    grid-template-columns: 1fr;
-  }
-
-  .questionProject,
-  .questionDetails {
-    grid-column: auto;
-    margin-inline-start: 0;
-  }
+  max-width: 42rem;
 }

@@ -1,31 +1,39 @@
-import { Link, Outlet } from 'react-router-dom';
-import { navigationItems } from '../../data/navigation';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
+
+const navItems = [
+  { path: '/', label: 'Home' },
+  { path: '/about', label: 'About' },
+  { path: '/cv', label: 'CV' },
+  { path: '/contact', label: 'Contact' },
+  { path: '/questions', label: 'Questions' },
+];
 
 export function Layout() {
   return (
     <div className={styles.shell}>
-      <a className={styles.skipLink} href="#main-content">
-        Skip to content
-      </a>
       <header className={styles.header}>
-        <Link className={styles.logo} to="/#top" aria-label="Kylie Bi home">
+        <NavLink className={styles.logo} to="/" aria-label="Kylie Bi home">
           Kylie Bi
-        </Link>
+        </NavLink>
         <nav className={styles.nav} aria-label="Primary navigation">
-          {navigationItems.map((item) => (
-            <Link className={styles.navLink} key={item.path} to={item.path}>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
+              }
+            >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
       </header>
-      <div className={styles.progress} aria-hidden="true" />
-      <main className={styles.main} id="main-content">
-        <div className={styles.container} data-scroll-container>
-          <Outlet />
-        </div>
+      <main className={styles.main}>
+        <Outlet />
       </main>
     </div>
   );
 }
+

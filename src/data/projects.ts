@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     slug: 'tyranno',
     title: 'TYRANNO',
-    path: '/tyranno',
+    path: '/work/tyranno',
     eyebrow: 'Project placeholder',
     category: 'Communication Design',
     coreQuestion: 'How can a complex subject become a clear and engaging communication experience?',
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     slug: 'the-infinite-discussion',
     title: 'The Infinite Discussion',
-    path: '/the-infinite-discussion',
+    path: '/work/infinite-discussion',
     eyebrow: 'Project placeholder',
     category: 'Editorial & Visual Communication',
     coreQuestion: 'How can discussion be structured so multiple perspectives remain legible?',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     slug: 'audi',
     title: 'Audi Integrated Brand Communication',
-    path: '/audi',
+    path: '/work/audi',
     eyebrow: 'Project placeholder',
     category: 'Automotive & Brand Communication',
     coreQuestion: 'How can a brand communication system connect strategy, production and experience?',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     slug: 'deear-magazine',
     title: 'Deear Magazine',
-    path: '/deear-magazine',
+    path: '/work/deear',
     eyebrow: 'Project placeholder',
     category: 'Publishing & Creative Production',
     coreQuestion: 'How can editorial structure turn a creative point of view into a repeatable publication system?',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   {
     slug: 'madam-in-eden-im-adam',
     title: "Madam, in Eden, I'm Adam",
-    path: '/madam-in-eden-im-adam',
+    path: '/work/madam-in-eden',
     eyebrow: 'Project placeholder',
     category: 'Concept Development',
     coreQuestion: 'How can language, identity and form create a coherent conceptual experience?',
@@ -70,7 +70,7 @@ export const projects: Project[] = [
 ];
 
 export function getProjectBySlug(slug: string | undefined) {
-  return projects.find((project) => project.slug === slug);
+  return projects.find((project) => project.slug === slug || project.path.split('/').pop() === slug);
 }
 
 export function getNextProject(project: Project) {

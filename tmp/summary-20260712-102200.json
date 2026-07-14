@@ -1,0 +1,4 @@
+{
+  "summary": "Fixed Agent GitHub HTTPS auth issue: merged portfolio scaffold into local main, pushed work branch to origin/work with full scaffold, synced main with origin/main and pushed auth helper script. Added scripts/push-with-github-token.ps1 for Agent environments that lack Windows credential manager.",
+  "current_status": "Portfolio scaffold live on GitHub (main via PR merge, work branch pushed). Agent push fix: set GITHUB_TOKEN and run scripts/push-with-github-token.ps1 instead of raw git push."
+}

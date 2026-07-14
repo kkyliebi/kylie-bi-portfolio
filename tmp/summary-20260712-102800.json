@@ -1,0 +1,4 @@
+{
+  "summary": "User asked for Cursor Agent GITHUB_TOKEN setup steps and whether PowerShell push script alone enables Codex repo access. Explained script only fixes push auth (not clone/connect), GITHUB_TOKEN must be set first, Cloud Agent is Linux so bash script added. Updated AGENTS.md with Cloud Agent git instructions.",
+  "current_status": "Repo has PowerShell and bash push scripts. User needs to configure GITHUB_TOKEN Runtime Secret in Cursor dashboard for Cloud Agent push to work."
+}

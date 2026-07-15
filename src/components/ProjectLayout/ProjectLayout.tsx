@@ -4,73 +4,23 @@ import type { Project } from '../../data/projects';
 import { getNextProject } from '../../data/projects';
 import styles from './ProjectLayout.module.css';
 
-type ChapterType = 'context' | 'research' | 'development' | 'process' | 'outcome' | 'reflection';
-type ChapterWidth = 'focused' | 'chapter' | 'expanded';
-
-type ProjectChapter = {
-  type: ChapterType;
-  width: ChapterWidth;
-  title: string;
-  eyebrow: string;
-  purpose: string;
-  mediaSlots?: MediaSlot[];
+const chapterClassNames = {
+  context: styles.context,
+  research: styles.research,
+  conceptDevelopment: styles.development,
+  designProcess: styles.process,
+  finalOutcome: styles.outcome,
+  reflection: styles.reflection,
 };
 
-type MediaSlot = {
-  kind: 'landscape' | 'portrait' | 'fullWidth';
-  caption: string;
+const chapterWidthClassNames = {
+  context: styles.chapter,
+  research: styles.chapter,
+  conceptDevelopment: styles.expanded,
+  designProcess: styles.chapter,
+  finalOutcome: styles.chapter,
+  reflection: styles.focused,
 };
-
-const projectChapters: ProjectChapter[] = [
-  {
-    type: 'context',
-    width: 'chapter',
-    title: 'Context',
-    eyebrow: '01 Context',
-    purpose: 'Establish the situation, audience, constraints and strategic conditions.',
-  },
-  {
-    type: 'research',
-    width: 'chapter',
-    title: 'Research',
-    eyebrow: '02 Research',
-    purpose: 'Surface the references, insights and evidence that shaped the direction.',
-    mediaSlots: [
-      { kind: 'landscape', caption: 'Landscape research image placeholder.' },
-      { kind: 'portrait', caption: 'Portrait research image placeholder.' },
-    ],
-  },
-  {
-    type: 'development',
-    width: 'expanded',
-    title: 'Concept Development',
-    eyebrow: '03 Concept Development',
-    purpose: 'Translate research into a clear concept, narrative logic and visual approach.',
-    mediaSlots: [{ kind: 'fullWidth', caption: 'Full-width concept image placeholder.' }],
-  },
-  {
-    type: 'process',
-    width: 'chapter',
-    title: 'Process',
-    eyebrow: '04 Process',
-    purpose: 'Show how the work was structured, tested, refined and made realisable.',
-  },
-  {
-    type: 'outcome',
-    width: 'chapter',
-    title: 'Outcome',
-    eyebrow: '05 Outcome',
-    purpose: 'Describe the final communication system, artifact or experience.',
-    mediaSlots: [{ kind: 'landscape', caption: 'Landscape outcome image placeholder.' }],
-  },
-  {
-    type: 'reflection',
-    width: 'focused',
-    title: 'Reflection',
-    eyebrow: '06 Reflection',
-    purpose: 'Record what the project clarified and how it informs future work.',
-  },
-];
 
 type ProjectLayoutProps = {
   project: Project;
@@ -79,7 +29,7 @@ type ProjectLayoutProps = {
 export function ProjectLayout({ project }: ProjectLayoutProps) {
   const nextProject = getNextProject(project);
   const projectRef = useRef<HTMLElement>(null);
-  const [activeChapter, setActiveChapter] = useState<ChapterType>(projectChapters[0].type);
+  const [activeChapter, setActiveChapter] = useState(project.chapters[0].id);
 
   useEffect(() => {
     const projectElement = projectRef.current;
@@ -88,8 +38,8 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
       return undefined;
     }
 
-    const chapters = projectChapters
-      .map((chapter) => document.getElementById(`${project.slug}-${chapter.type}`)?.closest('section'))
+    const chapters = project.chapters
+      .map((chapter) => document.getElementById(`${project.slug}-${chapter.id}`)?.closest('section'))
       .filter((chapter): chapter is HTMLElement => Boolean(chapter));
 
     const observer = new IntersectionObserver(
@@ -98,7 +48,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        const chapter = visibleEntry?.target.getAttribute('data-chapter') as ChapterType | null;
+        const chapter = visibleEntry?.target.getAttribute('data-chapter') as Project['chapters'][number]['id'] | null;
 
         if (chapter) {
           setActiveChapter(chapter);
@@ -110,9 +60,9 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
     chapters.forEach((chapter) => observer.observe(chapter));
 
     return () => observer.disconnect();
-  }, [project.slug]);
+  }, [project.chapters, project.slug]);
 
-  function scrollToChapter(chapter: ChapterType, behavior: ScrollBehavior = 'smooth') {
+  function scrollToChapter(chapter: Project['chapters'][number]['id'], behavior: ScrollBehavior = 'smooth') {
     document.getElementById(`${project.slug}-${chapter}`)?.closest('section')?.scrollIntoView({
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : behavior,
       block: 'nearest',
@@ -120,7 +70,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
     });
   }
 
-  function handleChapterLinkClick(event: MouseEvent<HTMLAnchorElement>, chapter: ChapterType) {
+  function handleChapterLinkClick(event: MouseEvent<HTMLAnchorElement>, chapter: Project['chapters'][number]['id']) {
     event.preventDefault();
     scrollToChapter(chapter);
     setActiveChapter(chapter);
@@ -131,18 +81,18 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
       return;
     }
 
-    const activeIndex = projectChapters.findIndex((chapter) => chapter.type === activeChapter);
+    const activeIndex = project.chapters.findIndex((chapter) => chapter.id === activeChapter);
     const direction = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
 
     if (direction === 0) {
       return;
     }
 
-    const nextIndex = Math.min(Math.max(activeIndex + direction, 0), projectChapters.length - 1);
+    const nextIndex = Math.min(Math.max(activeIndex + direction, 0), project.chapters.length - 1);
 
     if (nextIndex !== activeIndex) {
       event.preventDefault();
-      scrollToChapter(projectChapters[nextIndex].type);
+      scrollToChapter(project.chapters[nextIndex].id);
     }
   }
 
@@ -155,13 +105,13 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
       tabIndex={0}
     >
       <nav className={styles.chapterNav} aria-label={`${project.title} chapters`}>
-        {projectChapters.map((chapter) => (
+        {project.chapters.map((chapter) => (
           <a
-            aria-current={activeChapter === chapter.type ? 'location' : undefined}
-            className={activeChapter === chapter.type ? `${styles.chapterLink} ${styles.activeChapter}` : styles.chapterLink}
-            href={`#${project.slug}-${chapter.type}`}
-            key={chapter.type}
-            onClick={(event) => handleChapterLinkClick(event, chapter.type)}
+            aria-current={activeChapter === chapter.id ? 'location' : undefined}
+            className={activeChapter === chapter.id ? `${styles.chapterLink} ${styles.activeChapter}` : styles.chapterLink}
+            href={`#${project.slug}-${chapter.id}`}
+            key={chapter.id}
+            onClick={(event) => handleChapterLinkClick(event, chapter.id)}
           >
             {chapter.eyebrow}
           </a>
@@ -174,35 +124,40 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
             <h1 className={styles.title}>{project.title}</h1>
           </div>
           <div className={styles.sectionBody}>
-            <p className={styles.lede}>{project.coreQuestion}</p>
-            <p className={styles.meta}>{project.category}</p>
+            <p className={styles.lede}>{project.leadQuestion}</p>
+            <p className={styles.meta}>{[project.metadata.category, project.metadata.year, project.metadata.role].filter(Boolean).join(' / ')}</p>
           </div>
         </header>
 
-        {projectChapters.map((chapter) => {
-          const titleId = `${project.slug}-${chapter.type}`;
+        {project.chapters.map((chapter) => {
+          const titleId = `${project.slug}-${chapter.id}`;
 
           return (
             <section
               aria-labelledby={titleId}
-              className={`${styles.section} ${styles[chapter.type]} ${styles[chapter.width]}`}
-              data-chapter={chapter.type}
-              key={chapter.type}
+              className={`${styles.section} ${chapterClassNames[chapter.id]} ${chapterWidthClassNames[chapter.id]}`}
+              data-chapter={chapter.id}
+              key={chapter.id}
             >
               <div className={styles.sectionHeader}>
                 <p className={styles.eyebrow}>{chapter.eyebrow}</p>
                 <h2 id={titleId}>{chapter.title}</h2>
               </div>
               <div className={styles.sectionBody}>
-                <p>{chapter.purpose}</p>
-                <p>{chapter.title} placeholder content will be defined when the individual case narrative is written.</p>
+                {chapter.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
-              {chapter.mediaSlots ? (
+              {chapter.media ? (
                 <div className={styles.mediaGrid} aria-label={`${chapter.title} future image placements`}>
-                  {chapter.mediaSlots.map((slot) => (
-                    <figure className={`${styles.mediaSlot} ${styles[slot.kind]}`} key={`${chapter.type}-${slot.kind}`}>
-                      <div className={styles.mediaFrame} aria-hidden="true" />
-                      <figcaption>{slot.caption}</figcaption>
+                  {chapter.media.map((item) => (
+                    <figure className={`${styles.mediaSlot} ${styles[item.layout]}`} key={item.id}>
+                      {item.src ? (
+                        <img className={styles.mediaImage} src={item.src} alt={item.alt ?? ''} />
+                      ) : (
+                        <div className={styles.mediaFrame} aria-hidden="true" />
+                      )}
+                      <figcaption>{item.caption}</figcaption>
                     </figure>
                   ))}
                 </div>

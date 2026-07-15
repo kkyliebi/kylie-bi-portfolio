@@ -45,7 +45,7 @@ export function Home() {
                   type="button"
                 >
                   <span className={styles.questionNumber}>{String(index + 1).padStart(2, '0')}</span>
-                  <span className={styles.questionText}>{project.coreQuestion}</span>
+                  <span className={styles.questionText}>{project.leadQuestion}</span>
                   <span className={styles.questionProject}>{project.title}</span>
                 </button>
                 <div className={styles.questionDetails} hidden={!isExpanded} id={contentId}>

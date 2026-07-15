@@ -159,11 +159,27 @@
   border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
 }
 
+.mediaImage {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
 .landscape .mediaFrame {
   aspect-ratio: 16 / 9;
 }
 
+.landscape .mediaImage {
+  aspect-ratio: 16 / 9;
+}
+
 .portrait .mediaFrame {
+  aspect-ratio: 3 / 4;
+}
+
+.portrait .mediaImage {
   aspect-ratio: 3 / 4;
 }
 
@@ -172,6 +188,10 @@
 }
 
 .fullWidth .mediaFrame {
+  aspect-ratio: 21 / 9;
+}
+
+.fullWidth .mediaImage {
   aspect-ratio: 21 / 9;
 }
 

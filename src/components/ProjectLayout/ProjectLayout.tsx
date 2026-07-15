@@ -13,6 +13,12 @@ type ProjectChapter = {
   title: string;
   eyebrow: string;
   purpose: string;
+  mediaSlots?: MediaSlot[];
+};
+
+type MediaSlot = {
+  kind: 'landscape' | 'portrait' | 'fullWidth';
+  caption: string;
 };
 
 const projectChapters: ProjectChapter[] = [
@@ -29,6 +35,10 @@ const projectChapters: ProjectChapter[] = [
     title: 'Research',
     eyebrow: '02 Research',
     purpose: 'Surface the references, insights and evidence that shaped the direction.',
+    mediaSlots: [
+      { kind: 'landscape', caption: 'Landscape research image placeholder.' },
+      { kind: 'portrait', caption: 'Portrait research image placeholder.' },
+    ],
   },
   {
     type: 'development',
@@ -36,6 +46,7 @@ const projectChapters: ProjectChapter[] = [
     title: 'Concept Development',
     eyebrow: '03 Concept Development',
     purpose: 'Translate research into a clear concept, narrative logic and visual approach.',
+    mediaSlots: [{ kind: 'fullWidth', caption: 'Full-width concept image placeholder.' }],
   },
   {
     type: 'process',
@@ -50,6 +61,7 @@ const projectChapters: ProjectChapter[] = [
     title: 'Outcome',
     eyebrow: '05 Outcome',
     purpose: 'Describe the final communication system, artifact or experience.',
+    mediaSlots: [{ kind: 'landscape', caption: 'Landscape outcome image placeholder.' }],
   },
   {
     type: 'reflection',
@@ -185,6 +197,16 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                 <p>{chapter.purpose}</p>
                 <p>{chapter.title} placeholder content will be defined when the individual case narrative is written.</p>
               </div>
+              {chapter.mediaSlots ? (
+                <div className={styles.mediaGrid} aria-label={`${chapter.title} future image placements`}>
+                  {chapter.mediaSlots.map((slot) => (
+                    <figure className={`${styles.mediaSlot} ${styles[slot.kind]}`} key={`${chapter.type}-${slot.kind}`}>
+                      <div className={styles.mediaFrame} aria-hidden="true" />
+                      <figcaption>{slot.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              ) : null}
             </section>
           );
         })}

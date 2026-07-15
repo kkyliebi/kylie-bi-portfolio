@@ -68,11 +68,11 @@ export function Home() {
           <p>Placeholder architecture for professional context, working method and selected capabilities.</p>
         </div>
         <div className={styles.aboutGrid}>
-          <section className={styles.subsection} aria-labelledby="professional-summary-title">
+          <div className={styles.subsection} aria-labelledby="professional-summary-title">
             <h3 id="professional-summary-title">Professional Summary</h3>
             <p>Placeholder summary to be developed after the narrative structure is approved.</p>
-          </section>
-          <section className={styles.subsection} aria-labelledby="methodology-title">
+          </div>
+          <div className={styles.subsection} aria-labelledby="methodology-title">
             <h3 id="methodology-title">Methodology</h3>
             <ol className={styles.methodology}>
               <li>Question</li>
@@ -81,11 +81,11 @@ export function Home() {
               <li>Translate</li>
               <li>Materialise</li>
             </ol>
-          </section>
-          <section className={styles.subsection} aria-labelledby="capabilities-title">
+          </div>
+          <div className={styles.subsection} aria-labelledby="capabilities-title">
             <h3 id="capabilities-title">Selected Capabilities</h3>
             <p>Placeholder capability groups for future communication design, production and brand work.</p>
-          </section>
+          </div>
         </div>
       </section>
 

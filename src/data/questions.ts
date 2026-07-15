@@ -7,5 +7,5 @@ export type Question = {
 
 export const questions: Question[] = projects.map((project) => ({
   id: project.slug,
-  prompt: project.coreQuestion,
+  prompt: project.leadQuestion,
 }));

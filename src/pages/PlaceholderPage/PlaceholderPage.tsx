@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { SectionHeader } from '../../components/design-system';
 import styles from './PlaceholderPage.module.css';
 
 type PlaceholderPageProps = {
@@ -11,9 +12,7 @@ type PlaceholderPageProps = {
 export function PlaceholderPage({ eyebrow = 'Architecture placeholder', title, description, children }: PlaceholderPageProps) {
   return (
     <section className={styles.page}>
-      <p className={styles.eyebrow}>{eyebrow}</p>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <SectionHeader description={description} eyebrow={eyebrow} headingLevel={1} title={title} />
       {children}
     </section>
   );

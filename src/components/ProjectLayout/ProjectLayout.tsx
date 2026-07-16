@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type MouseEvent } from 'react';
-import { Link } from 'react-router-dom';
 import type { Project } from '../../data/projects';
 import { getNextProject } from '../../data/projects';
+import { Divider, EditorialParagraph, ImageBlock, ImageGrid, Metadata, ProjectNavigation, SectionLabel } from '../design-system';
 import styles from './ProjectLayout.module.css';
 
 const chapterClassNames = {
@@ -129,13 +129,20 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
       <div className={styles.archiveTrack} aria-label={`${project.title} project narrative`}>
         <header className={`${styles.section} ${styles.hero} ${styles.expanded}`}>
           <div className={styles.sectionHeader}>
-            <p className={styles.eyebrow}>{project.eyebrow}</p>
+            <SectionLabel className={styles.eyebrow}>{project.eyebrow}</SectionLabel>
             <p className={styles.chapterRole}>Opening Statement / Invitation</p>
             <h1 className={styles.title}>{project.title}</h1>
           </div>
           <div className={styles.sectionBody}>
             <p className={styles.lede}>{project.leadQuestion}</p>
-            <p className={styles.meta}>{[project.metadata.category, project.metadata.year, project.metadata.role].filter(Boolean).join(' / ')}</p>
+            <Metadata
+              className={styles.meta}
+              items={[
+                { value: project.metadata.category },
+                ...(project.metadata.year ? [{ value: project.metadata.year }] : []),
+                ...(project.metadata.role ? [{ value: project.metadata.role }] : []),
+              ]}
+            />
           </div>
         </header>
 
@@ -150,40 +157,39 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
               key={chapter.id}
             >
               <div className={styles.sectionHeader}>
-                <p className={styles.eyebrow}>{chapter.eyebrow}</p>
+                <SectionLabel className={styles.eyebrow}>{chapter.eyebrow}</SectionLabel>
                 <p className={styles.chapterRole}>{chapterEditorialRoles[chapter.id]}</p>
                 <h2 id={titleId}>{chapter.title}</h2>
               </div>
               <div className={styles.sectionBody}>
-                {chapter.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {chapter.body.map((paragraph, index) => (
+                  <EditorialParagraph key={paragraph} variant={index === 0 ? 'lede' : 'body'}>
+                    {paragraph}
+                  </EditorialParagraph>
                 ))}
               </div>
               {chapter.media ? (
-                <div className={styles.mediaGrid} aria-label={`${chapter.title} future image placements`}>
+                <ImageGrid className={styles.mediaGrid} aria-label={`${chapter.title} future image placements`}>
                   {chapter.media.map((item) => (
-                    <figure className={`${styles.mediaSlot} ${styles[item.layout]}`} key={item.id}>
-                      {item.src ? (
-                        <img className={styles.mediaImage} src={item.src} alt={item.alt ?? ''} />
-                      ) : (
-                        <div className={styles.mediaFrame} aria-hidden="true" />
-                      )}
-                      <figcaption>{item.caption}</figcaption>
-                    </figure>
+                    <ImageBlock
+                      alt={item.alt}
+                      caption={item.caption}
+                      className={styles.mediaSlot}
+                      key={item.id}
+                      layout={item.layout}
+                      src={item.src}
+                    />
                   ))}
-                </div>
+                </ImageGrid>
               ) : null}
-              <div className={styles.chapterClose} aria-hidden="true" />
+              <Divider className={styles.chapterClose} variant="short" />
             </section>
           );
         })}
 
         {nextProject ? (
           <aside className={`${styles.nextPanel} ${styles.focused}`} aria-label="Next project">
-            <Link className={styles.nextProject} to={nextProject.path}>
-              <span>Next Project</span>
-              <strong>{nextProject.title}</strong>
-            </Link>
+            <ProjectNavigation className={styles.nextProject} label="Next Project" title={nextProject.title} to={nextProject.path} />
           </aside>
         ) : null}
       </div>

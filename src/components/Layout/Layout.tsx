@@ -1,6 +1,7 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { navigationItems } from '../../data/navigation';
+import { Navigation } from '../design-system';
 import styles from './Layout.module.css';
 
 export function Layout() {
@@ -60,23 +61,16 @@ export function Layout() {
         <Link className={styles.logo} to="/#top" aria-label="Kylie Bi home" onClick={(event) => handleSectionLinkClick(event, 'top')}>
           Kylie Bi
         </Link>
-        <nav className={styles.nav} aria-label="Primary navigation">
-          {navigationItems.map((item) => {
-            const isActive = location.pathname === '/' && activeSection === item.sectionId;
-
-            return (
-              <Link
-                aria-current={isActive ? 'location' : undefined}
-                className={isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
-                key={item.path}
-                onClick={(event) => handleSectionLinkClick(event, item.sectionId)}
-                to={item.path}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+        <Navigation
+          className={styles.nav}
+          items={navigationItems.map((item) => ({
+            label: item.label,
+            path: item.path,
+            isActive: location.pathname === '/' && activeSection === item.sectionId,
+            onClick: (event) => handleSectionLinkClick(event, item.sectionId),
+          }))}
+          label="Primary navigation"
+        />
       </header>
       <div className={styles.progress} aria-hidden="true" />
       <main className={styles.main} id="main-content">

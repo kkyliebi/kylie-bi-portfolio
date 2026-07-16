@@ -22,6 +22,15 @@ const chapterWidthClassNames = {
   reflection: styles.focused,
 };
 
+const chapterEditorialRoles = {
+  context: 'Background',
+  research: 'Archive',
+  conceptDevelopment: 'Process',
+  designProcess: 'Iteration',
+  finalOutcome: 'Exhibition',
+  reflection: 'Epilogue',
+} satisfies Record<Project['chapters'][number]['id'], string>;
+
 type ProjectLayoutProps = {
   project: Project;
 };
@@ -121,6 +130,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
         <header className={`${styles.section} ${styles.hero} ${styles.expanded}`}>
           <div className={styles.sectionHeader}>
             <p className={styles.eyebrow}>{project.eyebrow}</p>
+            <p className={styles.chapterRole}>Opening Statement / Invitation</p>
             <h1 className={styles.title}>{project.title}</h1>
           </div>
           <div className={styles.sectionBody}>
@@ -141,6 +151,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
             >
               <div className={styles.sectionHeader}>
                 <p className={styles.eyebrow}>{chapter.eyebrow}</p>
+                <p className={styles.chapterRole}>{chapterEditorialRoles[chapter.id]}</p>
                 <h2 id={titleId}>{chapter.title}</h2>
               </div>
               <div className={styles.sectionBody}>
@@ -162,6 +173,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                   ))}
                 </div>
               ) : null}
+              <div className={styles.chapterClose} aria-hidden="true" />
             </section>
           );
         })}

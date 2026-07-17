@@ -48,3 +48,5 @@ The shared editorial design system lives in `src/components/design-system` and i
 ## Foundation
 
 The PB-001 framework is documented in `docs/project-foundation.md`. The homepage currently uses placeholder sections to validate the horizontal journey before final creative direction is applied.
+
+The PB-002 experience blueprint is documented in `docs/experience-blueprint.md`. Section narrative responsibilities live in `src/data/experienceBlueprint.ts` so future copy can change without rewriting section components.

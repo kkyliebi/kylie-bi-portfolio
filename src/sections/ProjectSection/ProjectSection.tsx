@@ -1,10 +1,10 @@
+import type { ExperienceSection } from '../../data/experienceBlueprint';
 import { SectionSkeleton } from '../SectionSkeleton';
 
 type ProjectSectionProps = {
-  id: string;
-  label: string;
+  section: ExperienceSection;
 };
 
-export function ProjectSection({ id, label }: ProjectSectionProps) {
-  return <SectionSkeleton id={id} label={label} title={label} />;
+export function ProjectSection({ section }: ProjectSectionProps) {
+  return <SectionSkeleton section={section} />;
 }

@@ -28,9 +28,28 @@
   margin: 0;
 }
 
-.placeholder {
+.blueprint {
   border: 1px dashed var(--color-border);
-  min-block-size: 10rem;
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-4);
+}
+
+.blueprint div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.blueprint dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.blueprint dd {
+  margin: 0;
 }
 
 @media (max-width: 760px) {

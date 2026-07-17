@@ -5,22 +5,22 @@ import styles from './Home.module.css';
 
 function renderJourneySection(section: (typeof journeySections)[number]) {
   if (section.kind === 'landing') {
-    return <LandingSection />;
+    return <LandingSection section={section} />;
   }
 
   if (section.kind === 'about') {
-    return <AboutSection />;
+    return <AboutSection section={section} />;
   }
 
   if (section.kind === 'archive') {
-    return <ArchiveSection />;
+    return <ArchiveSection section={section} />;
   }
 
   if (section.kind === 'contact') {
-    return <ContactSection />;
+    return <ContactSection section={section} />;
   }
 
-  return <ProjectSection id={section.id} label={section.label} />;
+  return <ProjectSection section={section} />;
 }
 
 export function Home() {

@@ -1,5 +1,10 @@
+import type { ExperienceSection } from '../../data/experienceBlueprint';
 import { SectionSkeleton } from '../SectionSkeleton';
 
-export function ArchiveSection() {
-  return <SectionSkeleton id="archive" label="Archive" title="Archive" />;
+type ArchiveSectionProps = {
+  section: ExperienceSection;
+};
+
+export function ArchiveSection({ section }: ArchiveSectionProps) {
+  return <SectionSkeleton section={section} />;
 }

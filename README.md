@@ -39,8 +39,12 @@ npm run preview
 
 ## Project status
 
-This repository contains the portfolio architecture, project content repository, reusable project-detail layout, and Sprint 08.1 editorial design-system foundation. Production project content and final media assets are still in progress.
+This repository contains the portfolio architecture, project content repository, reusable project-detail layout, Sprint 08.1 editorial design-system foundation, and PB-001 horizontal journey framework. Production project content, final media assets, and visual polish are still in progress.
 
 ## Design system
 
 The shared editorial design system lives in `src/components/design-system` and is documented in `docs/design-system.md`. Global tokens are defined in `src/styles/global.css`.
+
+## Foundation
+
+The PB-001 framework is documented in `docs/project-foundation.md`. The homepage currently uses placeholder sections to validate the horizontal journey before final creative direction is applied.

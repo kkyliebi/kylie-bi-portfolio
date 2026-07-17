@@ -47,7 +47,7 @@ export function Layout() {
     }
 
     event.preventDefault();
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    section.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     window.history.pushState(null, '', `#${sectionId}`);
     setActiveSection(sectionId);
   }

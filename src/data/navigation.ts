@@ -5,8 +5,8 @@ export type NavigationItem = {
 };
 
 export const navigationItems: NavigationItem[] = [
-  { label: 'Work', path: '/#work', sectionId: 'work' },
+  { label: 'Landing', path: '/#landing', sectionId: 'landing' },
   { label: 'About', path: '/#about', sectionId: 'about' },
-  { label: 'CV', path: '/#cv', sectionId: 'cv' },
+  { label: 'Archive', path: '/#archive', sectionId: 'archive' },
   { label: 'Contact', path: '/#contact', sectionId: 'contact' },
 ];

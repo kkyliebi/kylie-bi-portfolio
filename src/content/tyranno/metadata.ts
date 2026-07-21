@@ -4,10 +4,11 @@ export const tyrannoMetadata = {
   slug: 'tyranno',
   title: 'TYRANNO',
   path: '/work/tyranno',
-  eyebrow: 'Project placeholder',
+  eyebrow: 'Draft case study',
   category: 'Communication Design',
   leadQuestion: 'How can a complex subject become a clear and engaging communication experience?',
-  summary: 'A placeholder summary for the future TYRANNO case narrative.',
+  summary: 'A communication-design case study about translating a complex subject into a clear and engaging experience.',
+  contentStatus: 'draft',
   metadata: {
     category: 'Communication Design',
   },

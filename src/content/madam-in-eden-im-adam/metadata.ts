@@ -4,10 +4,11 @@ export const madamInEdenImAdamMetadata = {
   slug: 'madam-in-eden-im-adam',
   title: "Madam, in Eden, I'm Adam",
   path: '/work/madam-in-eden',
-  eyebrow: 'Project placeholder',
+  eyebrow: 'Draft case study',
   category: 'Concept Development',
   leadQuestion: 'How can language, identity and form create a coherent conceptual experience?',
-  summary: "A placeholder summary for the future Madam, in Eden, I'm Adam case narrative.",
+  summary: 'A concept-development case study exploring how language, identity and form can become one coherent experience.',
+  contentStatus: 'draft',
   metadata: {
     category: 'Concept Development',
   },

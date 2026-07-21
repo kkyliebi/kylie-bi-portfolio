@@ -61,14 +61,15 @@
 
 .archiveTrack {
   display: grid;
-  gap: clamp(var(--space-8), 12vw, 10rem);
+  gap: clamp(var(--space-9), 14vw, 13rem);
 }
 
 .section {
   border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
   display: grid;
-  gap: var(--space-6);
-  padding-block-start: var(--space-7);
+  gap: clamp(var(--space-6), 6vw, var(--space-9));
+  padding-block-start: var(--space-8);
+  position: relative;
 }
 
 .hero {
@@ -97,6 +98,14 @@
   margin-block-start: var(--space-3);
 }
 
+.chapterRole {
+  color: var(--color-accent);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: var(--line-height-base);
+  margin: 0;
+  max-width: 18rem;
+}
+
 .title {
   font-size: var(--font-size-display);
   line-height: var(--line-height-tight);
@@ -105,7 +114,7 @@
 }
 
 .section h2 {
-  font-size: clamp(2rem, 4vw, 4.4rem);
+  font-size: clamp(2.4rem, 5vw, 5.25rem);
   line-height: var(--line-height-tight);
   margin: 0;
   max-width: 9ch;
@@ -114,23 +123,23 @@
 .sectionBody p {
   color: var(--color-text-muted);
   font-size: clamp(1rem, 1.15vw, 1.125rem);
-  line-height: 1.85;
+  line-height: 1.9;
   margin: 0;
-  max-width: 34rem;
+  max-width: 31rem;
 }
 
 .sectionBody p:first-child {
   color: var(--color-text);
   font-size: clamp(1.125rem, 1.4vw, 1.35rem);
-  line-height: 1.55;
-  max-width: 32rem;
+  line-height: 1.6;
+  max-width: 30rem;
 }
 
 .lede {
   color: var(--color-text);
-  font-size: var(--font-size-heading);
-  line-height: var(--line-height-tight);
-  max-width: 16em;
+  font-size: clamp(2rem, 4vw, 4.8rem);
+  line-height: 1.02;
+  max-width: 14em;
 }
 
 .mediaGrid {
@@ -138,7 +147,7 @@
   display: grid;
   gap: var(--space-4);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-block-start: var(--space-4);
+  margin-block-start: var(--space-6);
 }
 
 .mediaSlot {
@@ -215,6 +224,14 @@
   outline-offset: var(--space-2);
 }
 
+.chapterClose {
+  align-self: end;
+  background: color-mix(in srgb, var(--color-border) 76%, transparent);
+  block-size: 1px;
+  inline-size: clamp(3rem, 8vw, 7rem);
+  margin-block-start: auto;
+}
+
 @media (min-width: 1024px) {
   .project {
     margin-inline: calc(var(--layout-gutter) * -1);
@@ -246,7 +263,7 @@
   .archiveTrack {
     align-items: stretch;
     display: flex;
-    gap: clamp(var(--space-8), 10vw, 9rem);
+    gap: clamp(8rem, 14vw, 14rem);
     min-height: calc(100vh - 10rem);
     width: max-content;
   }
@@ -260,7 +277,7 @@
     overflow-y: auto;
     overscroll-behavior-block: contain;
     padding-block-start: 0;
-    padding-inline: clamp(var(--space-6), 5vw, var(--space-9)) var(--space-2);
+    padding-inline: clamp(var(--space-7), 7vw, 8rem) clamp(var(--space-5), 4vw, var(--space-8));
     scroll-snap-align: start;
     scroll-snap-stop: always;
     scrollbar-width: thin;
@@ -274,26 +291,43 @@
   }
 
   .focused {
-    flex: 0 0 72vw;
-    max-width: 46rem;
+    flex: 0 0 76vw;
+    max-width: 50rem;
   }
 
   .chapter {
-    flex: 0 0 86vw;
-    max-width: 64rem;
+    flex: 0 0 92vw;
+    max-width: 70rem;
   }
 
   .expanded {
-    flex: 0 0 96vw;
-    max-width: 78rem;
+    flex: 0 0 108vw;
+    max-width: 86rem;
+  }
+
+  .hero {
+    align-content: space-between;
+    grid-template-columns: minmax(26rem, 0.82fr) minmax(24rem, 1fr);
+  }
+
+  .hero .sectionBody {
+    align-self: end;
   }
 
   .development {
-    grid-template-columns: minmax(20rem, 0.72fr) minmax(24rem, 1fr);
+    grid-template-columns: minmax(24rem, 0.72fr) minmax(28rem, 1fr);
   }
 
   .research {
-    grid-template-columns: minmax(18rem, 0.68fr) minmax(28rem, 1fr);
+    grid-template-columns: minmax(20rem, 0.62fr) minmax(30rem, 1fr);
+  }
+
+  .context {
+    align-content: center;
+  }
+
+  .context .sectionBody {
+    max-inline-size: 34rem;
   }
 
   .research .mediaGrid,
@@ -306,9 +340,16 @@
     max-inline-size: 56rem;
   }
 
-  .context,
-  .process,
+  .process .sectionBody {
+    align-self: center;
+  }
+
   .outcome {
+    grid-template-columns: minmax(20rem, 0.7fr) minmax(28rem, 1fr);
+  }
+
+  .context,
+  .process {
     grid-template-rows: auto 1fr;
   }
 
@@ -320,6 +361,11 @@
 
   .reflection {
     padding-inline-start: clamp(var(--space-8), 8vw, 8rem);
+  }
+
+  .reflection .sectionBody p:first-child {
+    font-size: clamp(1.35rem, 2vw, 1.9rem);
+    line-height: 1.45;
   }
 
   .nextPanel {

@@ -1,17 +1,22 @@
 import { questions } from '../../data/questions';
-import { PlaceholderPage, placeholderPageStyles } from '../PlaceholderPage/PlaceholderPage';
+import { TextLink } from '../../components/design-system';
+import { projects } from '../../data/projects';
+import { DraftPage, draftPageStyles } from '../DraftPage/DraftPage';
 
 export function Questions() {
   return (
-    <PlaceholderPage
+    <DraftPage
       title="Questions"
-      description="A placeholder index for the guiding questions that will frame the portfolio narrative."
+      eyebrow="Draft project index"
+      description="Each selected project begins with a question. Together, these questions reveal a practice focused on making complex ideas understandable and realisable."
     >
-      <ul className={placeholderPageStyles.list}>
-        {questions.map((question) => (
-          <li key={question.id}>{question.prompt}</li>
+      <ul className={draftPageStyles.list}>
+        {questions.map((question, index) => (
+          <li key={question.id}>
+            <TextLink to={projects[index].path}>{question.prompt}</TextLink>
+          </li>
         ))}
       </ul>
-    </PlaceholderPage>
+    </DraftPage>
   );
 }

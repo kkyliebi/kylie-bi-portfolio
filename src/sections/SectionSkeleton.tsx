@@ -5,9 +5,11 @@ import styles from './SectionSkeleton.module.css';
 type SectionSkeletonProps = {
   section: ExperienceSection;
   children?: ReactNode;
+  status?: string;
+  showTitle?: boolean;
 };
 
-export function SectionSkeleton({ section, children }: SectionSkeletonProps) {
+export function SectionSkeleton({ section, children, status, showTitle = true }: SectionSkeletonProps) {
   const { id, label, narrative } = section;
   const titleId = `${id}-title`;
 
@@ -15,9 +17,11 @@ export function SectionSkeleton({ section, children }: SectionSkeletonProps) {
     <section aria-labelledby={titleId} className={styles.section} id={id}>
       <div className={styles.inner}>
         <p className={styles.label}>{label}</p>
-        <h2 className={styles.title} id={titleId}>
-          {label}
-        </h2>
+        {showTitle ? (
+          <h2 className={styles.title} id={titleId}>
+            {label}
+          </h2>
+        ) : null}
         {children ?? (
           <dl className={styles.blueprint}>
             <div>
@@ -42,7 +46,7 @@ export function SectionSkeleton({ section, children }: SectionSkeletonProps) {
             </div>
           </dl>
         )}
-        <p className={styles.status}>Narrative blueprint</p>
+        {status ? <p className={styles.status}>{status}</p> : null}
       </div>
     </section>
   );

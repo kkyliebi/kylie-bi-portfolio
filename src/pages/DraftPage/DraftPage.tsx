@@ -1,15 +1,15 @@
 import type { ReactNode } from 'react';
 import { SectionHeader } from '../../components/design-system';
-import styles from './PlaceholderPage.module.css';
+import styles from './DraftPage.module.css';
 
-type PlaceholderPageProps = {
+type DraftPageProps = {
   eyebrow?: string;
   title: string;
   description: string;
   children?: ReactNode;
 };
 
-export function PlaceholderPage({ eyebrow = 'Architecture placeholder', title, description, children }: PlaceholderPageProps) {
+export function DraftPage({ eyebrow = 'Draft', title, description, children }: DraftPageProps) {
   return (
     <section className={styles.page}>
       <SectionHeader description={description} eyebrow={eyebrow} headingLevel={1} title={title} />
@@ -18,4 +18,4 @@ export function PlaceholderPage({ eyebrow = 'Architecture placeholder', title, d
   );
 }
 
-export { styles as placeholderPageStyles };
+export { styles as draftPageStyles };

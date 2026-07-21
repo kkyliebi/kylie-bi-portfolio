@@ -1,12 +1,36 @@
-import { useEffect, useState, type MouseEvent } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent } from 'react';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { navigationItems } from '../../data/navigation';
+import { getPreferredScrollBehavior } from '../../lib/transitions';
 import { Navigation } from '../design-system';
 import styles from './Layout.module.css';
 
 export function Layout() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const headerRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState(navigationItems[0].sectionId);
+
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+
+    if (!header) {
+      return undefined;
+    }
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+    };
+
+    updateHeaderHeight();
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(header);
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty('--header-height');
+    };
+  }, []);
 
   useEffect(() => {
     if (location.pathname !== '/') {
@@ -47,9 +71,14 @@ export function Layout() {
     }
 
     event.preventDefault();
-    section.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    window.history.pushState(null, '', `#${sectionId}`);
-    setActiveSection(sectionId);
+    const nextHash = `#${sectionId}`;
+
+    if (location.hash === nextHash) {
+      section.scrollIntoView({ behavior: getPreferredScrollBehavior(), block: 'start', inline: 'start' });
+      return;
+    }
+
+    navigate({ pathname: '/', hash: nextHash }, { preventScrollReset: true });
   }
 
   return (
@@ -57,7 +86,7 @@ export function Layout() {
       <a className={styles.skipLink} href="#main-content">
         Skip to content
       </a>
-      <header className={styles.header}>
+      <header className={styles.header} ref={headerRef}>
         <Link className={styles.logo} to="/#top" aria-label="Kylie Bi home" onClick={(event) => handleSectionLinkClick(event, 'top')}>
           Kylie Bi
         </Link>

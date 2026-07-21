@@ -8,6 +8,7 @@ import { Home } from './pages/Home/Home';
 import { NotFound } from './pages/NotFound/NotFound';
 import { ProjectPage } from './pages/ProjectPage/ProjectPage';
 import { Questions } from './pages/Questions/Questions';
+import { getPreferredScrollBehavior } from './lib/transitions';
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation();
@@ -15,7 +16,11 @@ function ScrollToTop() {
   useEffect(() => {
     if (hash) {
       window.requestAnimationFrame(() => {
-        document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' });
+        document.getElementById(hash.slice(1))?.scrollIntoView({
+          behavior: getPreferredScrollBehavior(),
+          block: 'start',
+          inline: 'start',
+        });
       });
       return;
     }

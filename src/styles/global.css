@@ -52,6 +52,7 @@
   --layout-reading-measure: 31rem;
   --layout-wide-measure: 58rem;
   --layout-archive-gap: clamp(8rem, 14vw, 14rem);
+  --header-height: 0px;
   --breakpoint-mobile: 560px;
   --breakpoint-tablet: 760px;
   --breakpoint-desktop: 1024px;
@@ -98,4 +99,27 @@ img {
 
 ::selection {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+@media (max-width: 760px) {
+  section[id] {
+    scroll-margin-block-start: calc(var(--header-height) + var(--space-4));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -135,12 +135,14 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
           </div>
           <div className={styles.sectionBody}>
             <p className={styles.lede}>{project.leadQuestion}</p>
+            <EditorialParagraph>{project.summary}</EditorialParagraph>
             <Metadata
               className={styles.meta}
               items={[
-                { value: project.metadata.category },
-                ...(project.metadata.year ? [{ value: project.metadata.year }] : []),
-                ...(project.metadata.role ? [{ value: project.metadata.role }] : []),
+                { label: 'Status', value: project.contentStatus === 'draft' ? 'Draft' : 'Verified' },
+                { label: 'Category', value: project.metadata.category },
+                ...(project.metadata.year ? [{ label: 'Year', value: project.metadata.year }] : []),
+                ...(project.metadata.role ? [{ label: 'Role', value: project.metadata.role }] : []),
               ]}
             />
           </div>
@@ -169,7 +171,7 @@ export function ProjectLayout({ project }: ProjectLayoutProps) {
                 ))}
               </div>
               {chapter.media ? (
-                <ImageGrid className={styles.mediaGrid} aria-label={`${chapter.title} future image placements`}>
+                <ImageGrid className={styles.mediaGrid} aria-label={`${chapter.title} draft media placements`}>
                   {chapter.media.map((item) => (
                     <ImageBlock
                       alt={item.alt}

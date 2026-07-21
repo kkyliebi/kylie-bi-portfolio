@@ -19,9 +19,31 @@
 }
 
 .page p,
-.page li {
+.page li,
+.page dd {
   color: var(--color-text-muted);
   line-height: var(--line-height-relaxed);
+}
+
+.page dl,
+.page dl div {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.page dl {
+  gap: var(--space-7);
+  margin: var(--space-5) 0 0;
+}
+
+.page dt {
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.page dd {
+  margin: 0;
 }
 
 .list {

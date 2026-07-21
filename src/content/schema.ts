@@ -38,6 +38,7 @@ export type ProjectContent = {
   role?: string;
   leadQuestion: string;
   summary: string;
+  contentStatus: 'draft' | 'verified';
   metadata: {
     year?: string;
     category: string;

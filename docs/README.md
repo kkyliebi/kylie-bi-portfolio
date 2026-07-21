@@ -15,8 +15,10 @@ Chat is used to think and decide. Validated decisions belong here.
 
 1. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — what the portfolio is, who it is for and what it must prove
 2. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — the reader journey and responsibility of every section
-3. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — what already exists, what is missing and when Kylie’s input is required
-4. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
+3. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — how evidence becomes accurate, publishable case studies
+4. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) — current factual and asset readiness for each project
+5. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — what already exists, what is missing and when Kylie’s input is required
+6. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
 
 ## Structure
 
@@ -34,6 +36,14 @@ Chat is used to think and decide. Validated decisions belong here.
 - `INFORMATION_ARCHITECTURE.md` — 🌱 Seed
 - `PROJECT_PAGE_BLUEPRINT.md` — currently contained within the website editorial blueprint; split only when useful
 
+### Project content
+
+- `PROJECT_CONTENT_SYSTEM.md` — 🌳 Core structure / 🌿 content
+- `PROJECT_VERIFICATION_MATRIX.md` — 🌿 Growing
+- `content-reconstruction.md` — generated-draft boundaries and known evidence gaps
+- `generated/project-inventory.md` — generated repository coverage report; do not edit manually
+- public project content lives in `/src/content`
+
 ### Experience system
 
 - `VISUAL_LANGUAGE.md` — 🌱 Seed
@@ -46,10 +56,6 @@ Chat is used to think and decide. Validated decisions belong here.
 
 - `website-build-brief.md`
 
-### Project content
-
-Public project content belongs in `/src/content` and supporting project documentation may be added under `/projects` when the content system requires it.
-
 ## Current priority
 
 Build the minimum complete portfolio required to begin job applications, while preserving a structure that can continue to grow over time.
@@ -61,5 +67,7 @@ The initial release should prioritise content truth, clear professional position
 - Preserve validated decisions rather than reopening them without a reason.
 - Revisions must identify what changed and why.
 - Do not create duplicate planning documents when an existing file can be updated.
+- Generated narrative is a drafting aid, never evidence of project history.
 - Do not ask Kylie to maintain routine documentation.
 - Bring Kylie into the process only for decisions involving accuracy, authorship, confidentiality, meaningful creative direction or publication approval.
+- Group human questions into concise checkpoints after repository evidence has been exhausted.

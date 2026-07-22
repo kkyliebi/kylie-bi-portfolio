@@ -20,7 +20,7 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 | TYRANNO | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/TYRANNO_EVIDENCE_MAP.md` and resolve the narrow confirmation set |
 | The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Locate original project definition, subject matter and outputs |
 | Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/AUDI_EVIDENCE_MAP.md` and resolve role, date, attribution and publication boundaries |
-| Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Confirm publication premise, role, outputs and available editorial spreads |
+| Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md` and resolve title, premise, role, deliverables and credits |
 | Madam, in Eden, I'm Adam | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md` and resolve premise, credits and final sequence |
 
 ## Project-by-project verification needs
@@ -132,31 +132,39 @@ Use the grouped confirmation set in `docs/projects/AUDI_EVIDENCE_MAP.md`. Do not
 
 ### Deear Magazine
 
+#### Evidence consolidation completed
+
+- inventoried current metadata, generated narrative and asset convention;
+- identified the current repeatable-publication-system framing as unsupported;
+- separated the confirmed editorial-layout contribution from unverified system, art-direction and production claims;
+- mapped the project to the six shared chapters using evidence boundaries;
+- established title, premise, format, authorship, credits and publication checks;
+- created `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md` as the current working record.
+
 #### Already supported by project history
 
-- editorial project;
+- editorial / magazine project;
 - visual-design contribution;
-- magazine layout work;
-- relevance to publishing and creative production.
+- editorial layout work;
+- relevance to publishing, visual communication and creative production.
 
 #### Still to verify for publication
 
-- publication concept and subject;
-- audience;
-- issue structure or frequency;
-- exact role and ownership boundaries;
-- contributors;
-- final deliverables;
-- print or digital specifications;
-- year;
-- available spreads and cover assets;
-- whether the public title is `Deear Magazine` or `Deear, Magazine`.
+- correct public title and punctuation;
+- year and original project context;
+- publication concept, subject and audience;
+- one-off, recurring or speculative status;
+- print, digital or hybrid format;
+- Kylie's exact role and ownership boundaries;
+- collaborators and contributor credits;
+- final deliverables and production specifications;
+- publication, prototype or presentation status;
+- available covers, spreads and process material;
+- final category, lead question and summary wording.
 
-#### Repository action before asking Kylie
+#### Next human checkpoint
 
-- locate presentation or layout evidence;
-- extract only facts visible in source materials;
-- prepare a concise naming and role confirmation request.
+Use the narrow confirmation set in `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md`. Do not claim a repeatable publication system, art direction or production ownership before those responsibilities are confirmed.
 
 ### Madam, in Eden, I'm Adam
 

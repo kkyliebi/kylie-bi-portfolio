@@ -83,15 +83,17 @@ The question creates curiosity. The synopsis gives enough orientation without re
 
 The first employable version should prioritise five projects that collectively prove range without weakening the central positioning.
 
-Current working set:
+The canonical project set and order are defined in `PROJECT_CONTENT_SYSTEM.md` and must be treated as the publication standard unless Kylie explicitly approves a change:
 
-1. **Tyranno Typeface** — speculative visual language and design research
-2. **ScentSync** — speculative service, product and communication system
-3. **Madam, in Eden, I’m Adam** — visual narrative and photography
-4. **APRICA AROUND** — identity, interface and campaign proposal
-5. **Audi selected cases** — brand communication and creative production
+1. **TYRANNO** — speculative communication system design
+2. **The Infinite Discussion** — speculative media and exhibition narrative
+3. **Audi Integrated Brand Communication** — real-world creative production and professional validation
+4. **Deear Magazine** — editorial narrative and publication systems
+5. **Madam, in Eden, I’m Adam** — conceptual photography and visual storytelling
 
-The final fifth-project packaging and exact titles remain subject to content audit.
+This sequence follows narrative rhythm rather than chronology or design category:
+
+**system-level thinking → future/media narrative → industry validation → editorial/social narrative → personal/human visual language**
 
 ## 5. Shared project-page structure
 

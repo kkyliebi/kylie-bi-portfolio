@@ -15,40 +15,46 @@ Chat is used to think and decide. Validated decisions belong here.
 
 When documentation conflicts, use this order:
 
-1. `KYLIE_DNA` — the single source of truth for Kylie’s identity, positioning and governing principles. This source currently exists outside this repository and should not be redefined here.
-2. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — the portfolio-specific translation of the DNA.
-3. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — canonical project set, order, case-study anatomy and evidence rules.
-4. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — canonical reader journey and section responsibilities.
-5. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) and [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — operational readiness and unresolved factual work.
-6. `/src/content` — public-facing implementation content, which must remain aligned with the documentation above.
-7. Generated drafts and chat recollection — drafting aids only; never authoritative evidence.
+1. `KYLIE_DNA` — the global single source of truth for Kylie’s identity, positioning and governing principles. It defines the person and long-term creative system from which all portfolio work derives.
+2. [`../MASTER_CREATIVE_BRIEF.md`](../MASTER_CREATIVE_BRIEF.md) — the portfolio website’s highest-level creative and implementation source of truth. It translates KYLIE DNA into website-specific direction for content, structure, interaction, visual language and Codex decisions.
+3. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — the concise portfolio-specific identity, audience, purpose and professional argument.
+4. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — canonical project set, order, case-study anatomy and evidence rules.
+5. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — canonical reader journey and section responsibilities.
+6. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) and [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — operational readiness and unresolved factual work.
+7. `/src/content` — public-facing implementation content, which must remain aligned with the sources above.
+8. Generated drafts and chat recollection — drafting aids only; never authoritative evidence.
+
+`KYLIE_DNA` and `MASTER_CREATIVE_BRIEF.md` do not compete. The first governs the wider creative identity; the second governs how that identity is expressed and implemented in this portfolio website.
 
 ## Start here
 
-1. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — what the portfolio is, who it is for and what it must prove
-2. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — canonical five-project sequence and how evidence becomes publishable case studies
-3. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — the reader journey and responsibility of every section
-4. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) — factual and asset readiness for each canonical project
-5. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — whole-site production status and the moments when Kylie’s input is required
-6. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
+1. [`../MASTER_CREATIVE_BRIEF.md`](../MASTER_CREATIVE_BRIEF.md) — highest-level website creative direction and implementation rules
+2. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — what the portfolio is, who it is for and what it must prove
+3. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — canonical five-project sequence and how evidence becomes publishable case studies
+4. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — the reader journey and responsibility of every section
+5. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) — factual and asset readiness for each canonical project
+6. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — whole-site production status and the moments when Kylie’s input is required
+7. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
 
 ## Document responsibilities
 
 | Document | Responsibility | Authority | Current status |
 |---|---|---|---|
+| `MASTER_CREATIVE_BRIEF.md` | Highest-level website creative direction, communication method, visual/motion principles and Codex decision framework | Website implementation SSOT | 🌳 Core |
 | `PROJECT_IDENTITY.md` | Portfolio identity, positioning, audience, desired impression and non-goals | Portfolio foundation | 🌳 Core |
 | `PROJECT_CONTENT_SYSTEM.md` | Canonical project set/order, shared case anatomy, evidence and completion rules | Project editorial standard | 🌳 Core structure / 🌿 content |
 | `WEBSITE_EDITORIAL_BLUEPRINT.md` | Reader journey, section responsibilities, reading modes and MVP definition | Website editorial architecture | 🌳 Core structure / 🌿 copy |
 | `PROJECT_VERIFICATION_MATRIX.md` | Per-project evidence readiness and verification gaps | Operational project audit | 🌿 Growing |
 | `CONTENT_STATUS.md` | Whole-site status, production order and grouped human checkpoints | Operational tracker | 🌿 Growing |
-| `website-build-brief.md` | Implementation handoff | Build bridge | 🌿 Growing |
+| `website-build-brief.md` | Concise implementation handoff derived from the master brief and editorial documentation | Build bridge | 🌿 Growing |
 
-Operational files must not redefine identity, the five-project set, project order or editorial architecture. They track the implementation of those decisions.
+Operational files must not redefine identity, the five-project set, project order, creative direction or editorial architecture. They track the implementation of those decisions.
 
 ## Structure
 
 ### Foundation
 
+- `../MASTER_CREATIVE_BRIEF.md` — 🌳 Core
 - `PROJECT_IDENTITY.md` — 🌳 Core
 - `COMMUNICATION_PHILOSOPHY.md` — 🌱 Seed
 - `DESIGN_PRINCIPLES.md` — 🌱 Seed
@@ -80,10 +86,6 @@ Operational files must not redefine identity, the five-project set, project orde
 ### Build handoff
 
 - `website-build-brief.md`
-
-## Known source gap
-
-`website-build-brief.md` currently cites `MASTER_CREATIVE_BRIEF.md`, but that repository file is empty. Until the external `KYLIE_DNA` source is deliberately imported or linked, use `PROJECT_IDENTITY.md`, `PROJECT_CONTENT_SYSTEM.md` and `WEBSITE_EDITORIAL_BLUEPRINT.md` as the authoritative repository-level foundations. Do not fill `MASTER_CREATIVE_BRIEF.md` with a newly invented summary.
 
 ## Current priority
 

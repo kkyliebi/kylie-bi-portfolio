@@ -19,7 +19,7 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 | --- | --- | --- | --- | --- | --- | --- |
 | TYRANNO | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/TYRANNO_EVIDENCE_MAP.md` and resolve the narrow confirmation set |
 | The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Locate original project definition, subject matter and outputs |
-| Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Separate the Audi work into verifiable cases, roles, dates and public-safe evidence |
+| Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/AUDI_EVIDENCE_MAP.md` and resolve role, date, attribution and publication boundaries |
 | Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Confirm publication premise, role, outputs and available editorial spreads |
 | Madam, in Eden, I'm Adam | ✅ | ✅ | ◐ | — | Level 1 | Consolidate the confirmed photography role and identify final image sequence |
 
@@ -94,6 +94,16 @@ Use the narrow confirmation set in `docs/projects/TYRANNO_EVIDENCE_MAP.md`. Do n
 
 ### Audi Integrated Brand Communication
 
+#### Evidence consolidation completed
+
+- inventoried the current Audi metadata, generated narrative and asset convention;
+- confirmed that the current route is structurally present but historically generic;
+- separated Audi Channel, Audi A8L Horch Global Premiere and Audi × Ryuichi Sakamoto into three evidence sets;
+- mapped each subcase provisionally to the six shared chapters;
+- established role, attribution, confidentiality and publication checks;
+- recommended one main Audi route with three internal subcases for the initial release;
+- created `docs/projects/AUDI_EVIDENCE_MAP.md` as the current working record.
+
 #### Already supported by project history
 
 - professional automotive brand-communication experience;
@@ -105,20 +115,20 @@ Use the narrow confirmation set in `docs/projects/TYRANNO_EVIDENCE_MAP.md`. Do n
 
 #### Still to verify for publication
 
+- whether the three cases remain one portfolio project or become separate routes;
 - which cases can be shown publicly;
 - precise dates;
-- employer, agency, team and client relationships;
-- Kylie's role on each case;
+- employer, agency, client and partner relationships;
+- Kylie's exact role and contribution on each case;
 - exact deliverables and channels;
-- confidentiality boundaries;
+- team and collaborator credits;
+- confidentiality, licensing and attribution boundaries;
 - approved visual evidence;
-- whether the three cases remain one portfolio project or become separate subcases.
+- outcome or reception evidence, where available.
 
-#### Repository action before asking Kylie
+#### Next human checkpoint
 
-- create a three-case evidence map;
-- distinguish confirmed professional facts from portfolio framing;
-- prepare one grouped confidentiality and attribution decision request.
+Use the grouped confirmation set in `docs/projects/AUDI_EVIDENCE_MAP.md`. Do not expand the generated narrative until role boundaries and publication permissions are resolved.
 
 ### Deear Magazine
 

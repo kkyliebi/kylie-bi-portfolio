@@ -18,7 +18,7 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 | Project | Route and structure | Draft narrative | Verified facts | Production media | Current level | Immediate next step |
 | --- | --- | --- | --- | --- | --- | --- |
 | TYRANNO | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/TYRANNO_EVIDENCE_MAP.md` and resolve the narrow confirmation set |
-| The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Locate original project definition, subject matter and outputs |
+| The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Review `docs/projects/THE_INFINITE_DISCUSSION_EVIDENCE_MAP.md` and decide whether to recover, condense or temporarily withhold the project |
 | Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/AUDI_EVIDENCE_MAP.md` and resolve role, date, attribution and publication boundaries |
 | Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md` and resolve title, premise, role, deliverables and credits |
 | Madam, in Eden, I'm Adam | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md` and resolve premise, credits and final sequence |
@@ -63,34 +63,41 @@ Use the narrow confirmation set in `docs/projects/TYRANNO_EVIDENCE_MAP.md`. Do n
 
 ### The Infinite Discussion
 
+#### Evidence consolidation completed
+
+- inventoried current metadata, generated narrative and asset convention;
+- confirmed that the route, title and archive position are structurally present;
+- identified the current lead question, summary and six-chapter narrative as unsupported editorial placeholders;
+- mapped every chapter to explicit evidence gaps rather than inferred content;
+- established recovery, concise-archive and temporary-withholding publication paths;
+- created `docs/projects/THE_INFINITE_DISCUSSION_EVIDENCE_MAP.md` as the current working record.
+
 #### Already supported by the repository
 
-- title;
+- current public title;
 - route;
 - editorial and visual communication category;
-- lead question;
 - archive position;
-- shared six-chapter structure.
+- shared six-chapter structure;
+- expected hero, research, process, gallery and archive asset classes.
 
-#### Not yet supported
+#### Still to verify for publication
 
-- project subject;
-- represented perspectives;
-- original brief;
-- audience;
-- source material;
-- final format;
-- year;
-- role;
-- collaborators;
-- deliverables;
-- distribution or reception.
+- whether the title is final;
+- actual project subject and original brief;
+- year and creation context;
+- represented perspectives and intended audience;
+- research and source material;
+- Kylie's exact role and authorship boundaries;
+- collaborators and credits;
+- final medium, format and deliverables;
+- publication, exhibition, presentation or distribution status;
+- available final media and process evidence;
+- reception or outcome evidence.
 
-#### Repository action before asking Kylie
+#### Next human checkpoint
 
-- search repository and available materials for the original project record;
-- determine whether the title is current or provisional;
-- avoid expanding generated copy until factual evidence is found.
+Use the narrow confirmation set in `docs/projects/THE_INFINITE_DISCUSSION_EVIDENCE_MAP.md`. Until source material is recovered, do not expand the generated narrative or treat the current lead question as historical evidence.
 
 ### Audi Integrated Brand Communication
 
@@ -202,9 +209,21 @@ Use the narrow confirmation set in `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md
 
 Use the narrow confirmation set in `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md`. Do not claim sole photography or creative direction before authorship and collaboration boundaries are confirmed.
 
+## Evidence-consolidation milestone
+
+Evidence maps now exist for all five current portfolio projects:
+
+1. `docs/projects/TYRANNO_EVIDENCE_MAP.md`
+2. `docs/projects/THE_INFINITE_DISCUSSION_EVIDENCE_MAP.md`
+3. `docs/projects/AUDI_EVIDENCE_MAP.md`
+4. `docs/projects/DEEAR_MAGAZINE_EVIDENCE_MAP.md`
+5. `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md`
+
+The repository is now ready to move from broad evidence consolidation into grouped factual confirmation, source-file recovery and production-priority decisions.
+
 ## Decisions intentionally deferred
 
-The following are not needed before evidence consolidation:
+The following are not needed before factual confirmation:
 
 - final typography;
 - final page animation;
@@ -215,4 +234,4 @@ The following are not needed before evidence consolidation:
 
 ## Next checkpoint
 
-The next useful human checkpoint should contain a grouped set of decisions, not open-ended writing requests. It should ask only for facts or publication choices that cannot be resolved from the repository and existing project materials.
+The next useful human checkpoint should combine the narrow confirmation sets into one prioritised decision sheet. It should ask only for facts or publication choices that cannot be resolved from the repository and available source materials.

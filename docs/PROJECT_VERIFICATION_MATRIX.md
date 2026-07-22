@@ -17,7 +17,7 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 
 | Project | Route and structure | Draft narrative | Verified facts | Production media | Current level | Immediate next step |
 | --- | --- | --- | --- | --- | --- | --- |
-| TYRANNO | ✅ | ✅ | ◐ | — | Level 1 | Consolidate existing thesis evidence and map it to the six chapters |
+| TYRANNO | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/TYRANNO_EVIDENCE_MAP.md` and resolve the narrow confirmation set |
 | The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Locate original project definition, subject matter and outputs |
 | Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Separate the Audi work into verifiable cases, roles, dates and public-safe evidence |
 | Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Confirm publication premise, role, outputs and available editorial spreads |
@@ -26,6 +26,14 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 ## Project-by-project verification needs
 
 ### TYRANNO
+
+#### Evidence consolidation completed
+
+- inventoried the current repository content and asset conventions;
+- identified generic placeholder copy in public metadata and narrative;
+- mapped supported project history to Context, Research, Concept Development, Process, Final Outcome and Reflection;
+- separated evidence-backed claims from unresolved publication decisions;
+- created `docs/projects/TYRANNO_EVIDENCE_MAP.md` as the current working record.
 
 #### Already supported by existing project history
 
@@ -44,13 +52,14 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 - final deliverables included in the case;
 - which research references belong in the website rather than the thesis;
 - final media set and captions;
-- public-facing reflection in Kylie's own voice.
+- public-facing reflection in Kylie's own voice;
+- status of the interactive website;
+- whether AR is complete work or future development;
+- exact core-symbol count if stated publicly.
 
-#### Repository action before asking Kylie
+#### Next human checkpoint
 
-- inventory current TYRANNO content and assets;
-- map evidence to Context, Research, Concept Development, Process, Outcome and Reflection;
-- prepare a narrow factual correction sheet rather than asking for new writing.
+Use the narrow confirmation set in `docs/projects/TYRANNO_EVIDENCE_MAP.md`. Do not request new long-form writing before those factual points are resolved.
 
 ### The Infinite Discussion
 

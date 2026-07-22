@@ -21,7 +21,7 @@ It complements `CONTENT_STATUS.md`: that file covers the whole website; this one
 | The Infinite Discussion | ✅ | ✅ | — | — | Level 1 | Locate original project definition, subject matter and outputs |
 | Audi Integrated Brand Communication | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/AUDI_EVIDENCE_MAP.md` and resolve role, date, attribution and publication boundaries |
 | Deear Magazine | ✅ | ✅ | ◐ | — | Level 1 | Confirm publication premise, role, outputs and available editorial spreads |
-| Madam, in Eden, I'm Adam | ✅ | ✅ | ◐ | — | Level 1 | Consolidate the confirmed photography role and identify final image sequence |
+| Madam, in Eden, I'm Adam | ✅ | ✅ | ◐ | — | Level 1 | Review `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md` and resolve premise, credits and final sequence |
 
 ## Project-by-project verification needs
 
@@ -160,6 +160,15 @@ Use the grouped confirmation set in `docs/projects/AUDI_EVIDENCE_MAP.md`. Do not
 
 ### Madam, in Eden, I'm Adam
 
+#### Evidence consolidation completed
+
+- inventoried current metadata, generated narrative and asset convention;
+- identified the present lead question and summary as generic placeholders;
+- mapped supported authorship across storyboarding, shoot execution, hand performance and post-production;
+- separated supported production facts from unresolved conceptual interpretation;
+- established credit, sequence, publication and media checks;
+- created `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md` as the current working record.
+
 #### Already supported by project history
 
 - conceptual photography project;
@@ -171,20 +180,19 @@ Use the grouped confirmation set in `docs/projects/AUDI_EVIDENCE_MAP.md`. Do not
 
 #### Still to verify for publication
 
-- year;
+- year and original project context;
 - original brief or conceptual premise;
-- collaborators and photography credits;
+- relationship between the palindrome title and the visual narrative;
+- collaborators, camera operation and photography credits;
 - intended audience or presentation context;
-- final image sequence;
-- exact number of images;
+- final image sequence and exact image count;
+- public-safe media status;
 - final reflection and learning;
-- whether the apostrophe and punctuation in the title should remain consistent across route, display title and files.
+- final category, lead question and role wording.
 
-#### Repository action before asking Kylie
+#### Next human checkpoint
 
-- normalize the supported role description;
-- locate and sequence final images;
-- prepare a single factual and credit check.
+Use the narrow confirmation set in `docs/projects/MADAM_IN_EDEN_IM_ADAM_EVIDENCE_MAP.md`. Do not claim sole photography or creative direction before authorship and collaboration boundaries are confirmed.
 
 ## Decisions intentionally deferred
 

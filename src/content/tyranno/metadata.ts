@@ -2,7 +2,7 @@ import type { ProjectContent } from '../schema';
 
 export const tyrannoMetadata = {
   slug: 'tyranno',
-  title: 'TYRANNO',
+  title: 'Tyranno',
   subtitle: 'A speculative typeface for interspecies communication between humans and T. rex',
   path: '/work/tyranno',
   eyebrow: 'Speculative communication system',

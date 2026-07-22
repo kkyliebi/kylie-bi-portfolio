@@ -3,14 +3,16 @@ import type { ProjectContent } from '../schema';
 export const tyrannoMetadata = {
   slug: 'tyranno',
   title: 'TYRANNO',
+  subtitle: 'A speculative typeface for interspecies communication between humans and T. rex',
   path: '/work/tyranno',
-  eyebrow: 'Draft case study',
-  category: 'Communication Design',
-  leadQuestion: 'How can a complex subject become a clear and engaging communication experience?',
-  summary: 'A communication-design case study about translating a complex subject into a clear and engaging experience.',
+  eyebrow: 'Speculative communication system',
+  category: 'Speculative Communication Design',
+  leadQuestion: 'How might humans communicate with a species that does not share human language?',
+  summary:
+    'TYRANNO is a speculative communication system for a 2050 scenario in which humans and T. rex must coexist. Drawing on semiotics, typography and behavioural research, the project translates posture, movement and gesture into a symbolic language expressed through glyphs, animation and an interactive web experience.',
   contentStatus: 'draft',
   metadata: {
-    category: 'Communication Design',
+    category: 'Speculative Communication Design',
   },
   nextSlug: 'the-infinite-discussion',
 } satisfies Omit<ProjectContent, 'chapters'>;

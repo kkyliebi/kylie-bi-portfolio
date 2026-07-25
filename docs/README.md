@@ -16,10 +16,11 @@ Chat is used to think and decide. Validated decisions belong here.
 1. [`PROJECT_IDENTITY.md`](./PROJECT_IDENTITY.md) — what the portfolio is, who it is for and what it must prove
 2. [`WEBSITE_EDITORIAL_BLUEPRINT.md`](./WEBSITE_EDITORIAL_BLUEPRINT.md) — the reader journey and responsibility of every section
 3. [`PROJECT_CONTENT_SYSTEM.md`](./PROJECT_CONTENT_SYSTEM.md) — how evidence becomes accurate, publishable case studies
-4. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) — current factual and asset readiness for each project
-5. [`PORTFOLIO_SPRINT_CHECKPOINT.md`](./PORTFOLIO_SPRINT_CHECKPOINT.md) — one compact confirmation sheet for the first job-ready release
-6. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — what already exists, what is missing and when Kylie’s input is required
-7. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
+4. [`projects/PROJECT_ARCHIVES_SOURCE_OF_TRUTH.md`](./projects/PROJECT_ARCHIVES_SOURCE_OF_TRUTH.md) — canonical factual and interpretive record for the five portfolio projects
+5. [`PROJECT_VERIFICATION_MATRIX.md`](./PROJECT_VERIFICATION_MATRIX.md) — current factual and asset readiness for each project
+6. [`PORTFOLIO_SPRINT_CHECKPOINT.md`](./PORTFOLIO_SPRINT_CHECKPOINT.md) — one compact confirmation sheet for the first job-ready release
+7. [`CONTENT_STATUS.md`](./CONTENT_STATUS.md) — what already exists, what is missing and when Kylie’s input is required
+8. [`website-build-brief.md`](./website-build-brief.md) — concise bridge between editorial intent and implementation
 
 ## Structure
 
@@ -40,6 +41,7 @@ Chat is used to think and decide. Validated decisions belong here.
 ### Project content
 
 - `PROJECT_CONTENT_SYSTEM.md` — 🌳 Core structure / 🌿 content
+- `projects/PROJECT_ARCHIVES_SOURCE_OF_TRUTH.md` — 🌳 Core canonical project record
 - `PROJECT_VERIFICATION_MATRIX.md` — 🌿 Growing
 - `PORTFOLIO_SPRINT_CHECKPOINT.md` — 🌿 Growing
 - `content-reconstruction.md` — generated-draft boundaries and known evidence gaps
@@ -75,3 +77,4 @@ The immediate human checkpoint is now consolidated in `PORTFOLIO_SPRINT_CHECKPOI
 - Do not ask Kylie to maintain routine documentation.
 - Bring Kylie into the process only for decisions involving accuracy, authorship, confidentiality, meaningful creative direction or publication approval.
 - Group human questions into concise checkpoints after repository evidence has been exhausted.
+- Update `projects/PROJECT_ARCHIVES_SOURCE_OF_TRUTH.md` before changing public copy, CV language or project metadata.
